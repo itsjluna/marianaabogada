@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     headers: {
       'Content-Type': 'application/json',
       'x-rapidapi-host': 'tiktok-api23.p.rapidapi.com',
-      'x-rapidapi-key': '1b7e081da1msh2637ee32f1c4bbcp178934jsna99aa242a548'
+      'x-rapidapi-key': process.env.RAPIDAPI_KEY || '1b7e081da1msh2637ee32f1c4bbcp178934jsna99aa242a548'
     }
   };
 
