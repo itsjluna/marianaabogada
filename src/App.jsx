@@ -52,6 +52,21 @@ function ContactForm({ title, subtitle, isDark }) {
 }
 
 export default function App() {
+  const [tiktokVideos, setTiktokVideos] = React.useState([]);
+  const [loadingVideos, setLoadingVideos] = React.useState(true);
+
+  useEffect(() => {
+    fetch('/api/tiktok')
+      .then(r => r.json())
+      .then(data => {
+        if (data && data.videos) {
+          setTiktokVideos(data.videos.slice(0,3));
+        }
+      })
+      .catch(e => console.error("Error fetching videos", e))
+      .finally(() => setLoadingVideos(false));
+  }, []);
+
   useEffect(() => {
     // Theme toggle init
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -397,68 +412,31 @@ export default function App() {
     <p className="section-body">Mantente informado con nuestros videos cortos sobre derechos, trámites y noticias reales de inmigración directamente desde la cuenta oficial de Mariana.</p>
   </div>
   <div className="tiktok-grid">
-    {/*  */}
-    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: Defensa de Deportación en 1 Minuto" onClick={(e) => playTikTokVideo(e, '7606213554449992991')}>
-      <div className="tiktok-thumbnail">
-        <img src="https://p16-common-sign.tiktokcdn.com/tos-useast8-p-0068-tx2/oAmp8OLErsIEj3vpAPBIRseFkfKBurEVED9BAv~tplv-tiktokx-origin.image?dr=14575&x-expires=1780261200&x-signature=ouECDXq4YVzJTmuun5qe7DlTK2Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2" alt="Miniatura de TikTok de Defensa de Deportación" />
-        <div className="tiktok-overlay">
-          <div className="tiktok-play-btn">
-            <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    {loadingVideos ? (
+      <p style={{color: 'rgba(255,255,255,0.7)', textAlign: 'center', gridColumn: '1 / -1'}}>Cargando videos recientes de @tuabogadamariana...</p>
+    ) : (
+      tiktokVideos.map((video) => (
+        <div key={video.id} className="tiktok-card" role="button" tabIndex="0" aria-label={`Reproducir video: ${video.desc}`} onClick={(e) => playTikTokVideo(e, video.id)}>
+          <div className="tiktok-thumbnail">
+            <img src={video.cover || "images/mariana-about.png"} alt="Miniatura de TikTok" />
+            <div className="tiktok-overlay">
+              <div className="tiktok-play-btn">
+                <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div className="tiktok-badge">
+              <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.09-2.9-.59-4.06-1.51-.86-.67-1.52-1.62-1.92-2.67v8.91c.08 2.82-1.7 5.62-4.48 6.53-2.78.96-6.07.13-7.98-2.03C2.074 17.07.894 13.62 2.014 10.6c1.07-2.98 4.2-5.11 7.4-4.83.15 1.49.62 2.96 1.43 4.24-1.92.24-3.71 1.71-4.04 3.63-.44 2.44 1.25 4.9 3.69 5.34 2.44.47 5.03-1.22 5.48-3.66.1-1.08.06-8.91.06-15.3-.01 0 .01 0 0 0z"/></svg>
+              <span>TikTok</span>
+            </div>
+          </div>
+          <div className="tiktok-info">
+            <h3 style={{whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>{video.desc || "Consejo de Inmigración"}</h3>
+            <p style={{display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden'}}>{video.desc || "Información importante sobre tu proceso."}</p>
+            <span className="tiktok-link">Ver en TikTok →</span>
           </div>
         </div>
-        <div className="tiktok-badge">
-          <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.09-2.9-.59-4.06-1.51-.86-.67-1.52-1.62-1.92-2.67v8.91c.08 2.82-1.7 5.62-4.48 6.53-2.78.96-6.07.13-7.98-2.03C2.074 17.07.894 13.62 2.014 10.6c1.07-2.98 4.2-5.11 7.4-4.83.15 1.49.62 2.96 1.43 4.24-1.92.24-3.71 1.71-4.04 3.63-.44 2.44 1.25 4.9 3.69 5.34 2.44.47 5.03-1.22 5.48-3.66.1-1.08.06-8.91.06-15.3-.01 0 .01 0 0 0z"/></svg>
-          <span>TikTok</span>
-        </div>
-      </div>
-      <div className="tiktok-info">
-        <h3>Defensa de Deportación en 1 Minuto</h3>
-        <p>¿Qué hacer si tienes una orden de deportación? Conoce tus 3 opciones inmediatas y cómo actuar.</p>
-        <span className="tiktok-link">Ver en TikTok →</span>
-      </div>
-    </div>
-    
-    {/*  */}
-    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: ¿Cómo solicitar Asilo Político?" onClick={(e) => playTikTokVideo(e, '7603737243768982815')}>
-      <div className="tiktok-thumbnail">
-        <img src="https://p16-common-sign.tiktokcdn.com/tos-useast8-p-0068-tx2/o0TRIufDqIwojaTIhzemEC5eLEdAYEbAFAAqQA~tplv-tiktokx-origin.image?dr=14575&x-expires=1780261200&x-signature=pIw1L90aRPyquhi0y7f2qMZ%2BJzk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2" alt="Miniatura de TikTok de Asilo Político" />
-        <div className="tiktok-overlay">
-          <div className="tiktok-play-btn">
-            <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div className="tiktok-badge">
-          <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.09-2.9-.59-4.06-1.51-.86-.67-1.52-1.62-1.92-2.67v8.91c.08 2.82-1.7 5.62-4.48 6.53-2.78.96-6.07.13-7.98-2.03C2.074 17.07.894 13.62 2.014 10.6c1.07-2.98 4.2-5.11 7.4-4.83.15 1.49.62 2.96 1.43 4.24-1.92.24-3.71 1.71-4.04 3.63-.44 2.44 1.25 4.9 3.69 5.34 2.44.47 5.03-1.22 5.48-3.66.1-1.08.06-8.91.06-15.3-.01 0 .01 0 0 0z"/></svg>
-          <span>TikTok</span>
-        </div>
-      </div>
-      <div className="tiktok-info">
-        <h3>¿Cómo solicitar Asilo Político?</h3>
-        <p>Los requisitos clave y el primer paso fundamental si estás huyendo de violencia en tu país.</p>
-        <span className="tiktok-link">Ver en TikTok →</span>
-      </div>
-    </div>
-    
-    {/*  */}
-    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: Reunificación Familiar en Texas" onClick={(e) => playTikTokVideo(e, '7582623625484848415')}>
-      <div className="tiktok-thumbnail">
-        <img src="https://p16-common-sign.tiktokcdn.com/tos-useast8-p-0068-tx2/ocBEQCDmFAXUOy1DARiyACTEC4vIQVAfApubfE~tplv-tiktokx-origin.image?dr=14575&x-expires=1780261200&x-signature=CshzlVsRyBAdCZZsNkRVxbjobXQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2" alt="Miniatura de TikTok de Reunificación Familiar" />
-        <div className="tiktok-overlay">
-          <div className="tiktok-play-btn">
-            <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div className="tiktok-badge">
-          <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.09-2.9-.59-4.06-1.51-.86-.67-1.52-1.62-1.92-2.67v8.91c.08 2.82-1.7 5.62-4.48 6.53-2.78.96-6.07.13-7.98-2.03C2.074 17.07.894 13.62 2.014 10.6c1.07-2.98 4.2-5.11 7.4-4.83.15 1.49.62 2.96 1.43 4.24-1.92.24-3.71 1.71-4.04 3.63-.44 2.44 1.25 4.9 3.69 5.34 2.44.47 5.03-1.22 5.48-3.66.1-1.08.06-8.91.06-15.3-.01 0 .01 0 0 0z"/></svg>
-          <span>TikTok</span>
-        </div>
-      </div>
-      <div className="tiktok-info">
-        <h3>Reunificación Familiar en Texas</h3>
-        <p>¿Qué familiares pueden pedirte? Conoce las categorías, requisitos y tiempos de espera reales.</p>
-        <span className="tiktok-link">Ver en TikTok →</span>
-      </div>
-    </div>
+      ))
+    )}
   </div>
   
   <div className="tiktok-footer">

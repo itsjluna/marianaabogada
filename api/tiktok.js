@@ -2,7 +2,7 @@ export default async function handler(req, res) {
   // CORS configuration if needed (though usually same-origin for Vercel)
   res.setHeader('Access-Control-Allow-Origin', '*');
 
-  const secUid = 'MS4wLjABAAAAqB08cUbXaDWqbD6MCga2RbGTuhfO2EsHayBYx08NDrN7IE3jQuRDNNN6YwyfH6_6';
+  const secUid = 'MS4wLjABAAAAt227ztI0LG9hICHUJZ9Wh8R27XC0PqryOMqmRd3BUaGQI0SU7kLUQ3q3LLPIwrER';
   const url = `https://tiktok-api23.p.rapidapi.com/api/user/posts?secUid=${secUid}&count=6&cursor=0`;
   
   const options = {
