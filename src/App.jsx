@@ -514,6 +514,8 @@ export default function App() {
     </a>
   </div>
 
+  <div className="animate-on-scroll animate-fade-up delay-200">
+    <ContactForm title="¿Prefieres que te llamemos?" subtitle="Deja tus datos y nos comunicamos contigo pronto." isDark={false} />
   </div>
 </section>
 
