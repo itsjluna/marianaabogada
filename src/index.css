@@ -795,6 +795,14 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
   outline: 2px solid var(--purple);
   outline-offset: 4px;
 }
+.tiktok-card.playing {
+  min-height: 550px;
+  background: black;
+}
+.tiktok-card.playing iframe {
+  width: 100%;
+  height: 100%;
+}
 .tiktok-card:hover, .tiktok-card:focus {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(63,38,68,0.08);
