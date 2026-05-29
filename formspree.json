@@ -1,0 +1,13 @@
+{
+  "forms": {
+    "contact": {
+      "name": "Mariana Landing Contact Form",
+      "actions": [
+        {
+          "type": "email",
+          "to": "marianapehrenberg@gmail.com"
+        }
+      ]
+    }
+  }
+}

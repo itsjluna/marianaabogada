@@ -3,8 +3,12 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
+import { FormspreeProvider } from '@formspree/react';
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <FormspreeProvider project="3012604000848575722">
+      <App />
+    </FormspreeProvider>
   </StrictMode>,
 )

@@ -1,5 +1,55 @@
 import React, { useEffect } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import './index.css';
+
+function ContactForm({ title, subtitle, isDark }) {
+  const [state, handleSubmit] = useForm("contact");
+
+  if (state.succeeded) {
+      return (
+        <div className="success-msg" style={{display: 'block'}}>
+          <h4 style={isDark ? {color: 'white'} : {}}>¡Mensaje Enviado!</h4>
+          <p style={isDark ? {color: 'rgba(255,255,255,0.8)'} : {}}>Nos pondremos en contacto contigo lo antes posible.</p>
+        </div>
+      );
+  }
+
+  return (
+    <div className="lead-form" style={isDark ? {background: 'transparent', padding: '32px', border: 'none', color: 'white'} : {}}>
+      <h3 style={isDark ? {fontSize: '24px', marginBottom: '8px', color: 'white'} : {}}>{title}</h3>
+      <p style={isDark ? {fontSize: '14px', marginBottom: '24px', color: 'rgba(255,255,255,0.8)'} : {}}>{subtitle}</p>
+      
+      <form onSubmit={handleSubmit}>
+        <div className="form-field">
+          <input type="text" name="name" placeholder="Tu nombre completo" required />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+        </div>
+        <div className="form-field">
+          <input type="tel" name="phone" placeholder="Tu número de teléfono" required />
+          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+        </div>
+        <div className="form-field">
+          <select name="case" required defaultValue="">
+            <option value="" disabled>¿Cuál es tu situación?</option>
+            <option>Orden de deportación</option>
+            <option>Problemas con ICE</option>
+            <option>Asilo Político</option>
+            <option>Arreglar mis papeles</option>
+            <option>Otro</option>
+          </select>
+          <ValidationError prefix="Case" field="case" errors={state.errors} />
+        </div>
+        <div className="form-field">
+          <textarea name="message" placeholder="Cuéntanos brevemente tu situación (opcional)" style={isDark ? {background: 'rgba(255,255,255,0.1)', color: 'white', borderColor: 'rgba(255,255,255,0.2)'} : {}}></textarea>
+          <ValidationError prefix="Message" field="message" errors={state.errors} />
+        </div>
+        <button type="submit" disabled={state.submitting} className="form-submit" style={isDark ? {width: '100%', marginTop: '12px', padding: '14px'} : {}}>
+          {state.submitting ? 'Enviando...' : 'Enviar mis datos'}
+        </button>
+      </form>
+    </div>
+  );
+}
 
 export default function App() {
   useEffect(() => {
@@ -97,29 +147,7 @@ export default function App() {
       Habla con nuestra abogada hoy. Sin presión, sin promesas falsas. Solo claridad sobre tu caso.
      <div className="hero-cta-block" style={{marginTop: '32px'}}>
       <div className="hero-form-wrapper" style={{background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(12px)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.1)'}}>
-        <div className="lead-form" style={{background: 'transparent', padding: '32px', border: 'none', color: 'white'}}>
-          <h3 style={{fontSize: '24px', marginBottom: '8px', color: 'white'}}>Consulta Gratuita</h3>
-          <p style={{fontSize: '14px', marginBottom: '24px', color: 'rgba(255,255,255,0.8)'}}>Déjanos tus datos y te llamaremos de inmediato.</p>
-          <form action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-            <div className="form-field">
-              <input type="text" name="name" placeholder="Tu nombre completo" required />
-            </div>
-            <div className="form-field">
-              <input type="tel" name="phone" placeholder="Tu número de teléfono" required />
-            </div>
-            <div className="form-field">
-              <select name="case" required defaultValue="">
-                <option value="" disabled>¿Cuál es tu situación?</option>
-                <option>Orden de deportación</option>
-                <option>Problemas con ICE</option>
-                <option>Asilo Político</option>
-                <option>Arreglar mis papeles</option>
-                <option>Otro</option>
-              </select>
-            </div>
-            <button type="submit" className="form-submit" style={{width: '100%', marginTop: '12px', padding: '14px'}}>Enviar mis datos</button>
-          </form>
-        </div>
+        <ContactForm title="Consulta Gratuita" subtitle="Déjanos tus datos y te llamaremos de inmediato." isDark={true} />
       </div>
     </div>
     </p>
@@ -486,41 +514,6 @@ export default function App() {
     </a>
   </div>
 
-  {/*  */}
-  <div className="lead-form animate-on-scroll animate-fade-up delay-200">
-    <h3>¿Prefieres que te llamemos?</h3>
-    <p>Deja tus datos y nos comunicamos contigo pronto.</p>
-    <div id="formWrap">
-      <div className="form-field">
-        <input type="text" placeholder="Tu nombre completo" id="f_name" />
-      </div>
-      <div className="form-field">
-        <input type="tel" placeholder="Tu número de teléfono" id="f_phone" />
-      </div>
-      <div className="form-field">
-        <select id="f_case">
-          <option value="" disabled selected>¿Cuál es tu situación?</option>
-          <option>Tengo una orden de deportación</option>
-          <option>Necesito ayuda con ICE</option>
-          <option>Quiero pedir asilo</option>
-          <option>Quiero arreglar mis papeles</option>
-          <option>Residencia permanente / Green Card</option>
-          <option>Visa de trabajo o familiar</option>
-          <option>Ciudadanía / Naturalización</option>
-          <option>Otro / No sé cómo clasificar mi caso</option>
-        </select>
-      </div>
-      <div className="form-field">
-        <textarea id="f_msg" placeholder="Cuéntanos brevemente tu situación (opcional)"></textarea>
-      </div>
-      <button className="form-submit" >Solicitar que me contacten</button>
-      <p className="form-note">Información 100% confidencial. Sin compromiso.</p>
-    </div>
-    <div className="success-msg" id="formSuccess">
-      <svg width="48" height="48" fill="none" stroke="#7C3883" stroke-width="1.5" viewBox="0 0 24 24" style={{margin: "0 auto 16px", display: "block"}}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
-      <h4>¡Recibimos tu solicitud!</h4>
-      <p>Una de nuestras especialistas se comunicará contigo pronto. Gracias por confiar en nosotras.</p>
-    </div>
   </div>
 </section>
 
