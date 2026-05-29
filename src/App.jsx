@@ -370,9 +370,9 @@ export default function App() {
   </div>
   <div className="tiktok-grid">
     {/*  */}
-    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: Defensa de Deportación en 1 Minuto" onClick={(e) => playTikTokVideo(e, '7645071694134119693')}>
+    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: Defensa de Deportación en 1 Minuto" onClick={(e) => playTikTokVideo(e, '7606213554449992991')}>
       <div className="tiktok-thumbnail">
-        <img src="images/mariana-hero.png" alt="Miniatura de TikTok de Defensa de Deportación" />
+        <img src="https://p16-common-sign.tiktokcdn.com/tos-useast8-p-0068-tx2/oAmp8OLErsIEj3vpAPBIRseFkfKBurEVED9BAv~tplv-tiktokx-origin.image?dr=14575&x-expires=1780261200&x-signature=ouECDXq4YVzJTmuun5qe7DlTK2Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2" alt="Miniatura de TikTok de Defensa de Deportación" />
         <div className="tiktok-overlay">
           <div className="tiktok-play-btn">
             <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -391,9 +391,9 @@ export default function App() {
     </div>
     
     {/*  */}
-    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: ¿Cómo solicitar Asilo Político?" onClick={(e) => playTikTokVideo(e, '7644627078997970207')}>
+    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: ¿Cómo solicitar Asilo Político?" onClick={(e) => playTikTokVideo(e, '7603737243768982815')}>
       <div className="tiktok-thumbnail">
-        <img src="images/mariana-about.png" alt="Miniatura de TikTok de Asilo Político" />
+        <img src="https://p16-common-sign.tiktokcdn.com/tos-useast8-p-0068-tx2/o0TRIufDqIwojaTIhzemEC5eLEdAYEbAFAAqQA~tplv-tiktokx-origin.image?dr=14575&x-expires=1780261200&x-signature=pIw1L90aRPyquhi0y7f2qMZ%2BJzk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2" alt="Miniatura de TikTok de Asilo Político" />
         <div className="tiktok-overlay">
           <div className="tiktok-play-btn">
             <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -412,9 +412,9 @@ export default function App() {
     </div>
     
     {/*  */}
-    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: Reunificación Familiar en Texas" onClick={(e) => playTikTokVideo(e, '7644242137311137037')}>
+    <div className="tiktok-card" role="button" tabIndex="0" aria-label="Reproducir video: Reunificación Familiar en Texas" onClick={(e) => playTikTokVideo(e, '7582623625484848415')}>
       <div className="tiktok-thumbnail">
-        <img src="images/mariana-about.png" alt="Miniatura de TikTok de Reunificación Familiar" />
+        <img src="https://p16-common-sign.tiktokcdn.com/tos-useast8-p-0068-tx2/ocBEQCDmFAXUOy1DARiyACTEC4vIQVAfApubfE~tplv-tiktokx-origin.image?dr=14575&x-expires=1780261200&x-signature=CshzlVsRyBAdCZZsNkRVxbjobXQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2" alt="Miniatura de TikTok de Reunificación Familiar" />
         <div className="tiktok-overlay">
           <div className="tiktok-play-btn">
             <svg width="24" height="24" fill="white" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
