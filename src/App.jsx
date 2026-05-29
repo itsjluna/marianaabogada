@@ -75,9 +75,9 @@ export default function App() {
 {/*  */}
 <section className="hero">
   <div className="hero-lava-lamp" style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1, overflow: 'hidden', background: 'var(--plum)'}}>
-    <div className="blob blob-1" style={{position: 'absolute', borderRadius: '50%', filter: 'blur(90px)', opacity: 0.6, width: '50vw', height: '50vw', background: 'var(--purple)', top: '-10%', left: '-10%', animation: 'floatLava 15s ease-in-out infinite alternate'}}></div>
-    <div className="blob blob-2" style={{position: 'absolute', borderRadius: '50%', filter: 'blur(90px)', opacity: 0.6, width: '40vw', height: '40vw', background: 'var(--lavender)', bottom: '-20%', right: '40%', animation: 'floatLava 18s ease-in-out infinite alternate-reverse'}}></div>
-    <div className="blob blob-3" style={{position: 'absolute', borderRadius: '50%', filter: 'blur(90px)', opacity: 0.6, width: '35vw', height: '35vw', background: '#5a2a62', top: '30%', left: '60%', animation: 'floatLava 22s ease-in-out infinite alternate', animationDelay: '-5s'}}></div>
+    <div className="blob blob-1" style={{position: 'absolute', borderRadius: '50%', filter: 'blur(90px)', opacity: 0.6, width: '50vw', height: '50vw', background: 'var(--purple)', top: '-10%', left: '-10%', animation: 'floatLava1 20s ease-in-out infinite'}}></div>
+    <div className="blob blob-2" style={{position: 'absolute', borderRadius: '50%', filter: 'blur(90px)', opacity: 0.6, width: '40vw', height: '40vw', background: 'var(--lavender)', bottom: '-20%', right: '40%', animation: 'floatLava2 25s ease-in-out infinite'}}></div>
+    <div className="blob blob-3" style={{position: 'absolute', borderRadius: '50%', filter: 'blur(90px)', opacity: 0.6, width: '35vw', height: '35vw', background: '#5a2a62', top: '30%', left: '60%', animation: 'floatLava3 22s ease-in-out infinite'}}></div>
   </div>
   <div className="hero-text">
     <p className="hero-eyebrow">Derecho de Inmigración · Houston, Texas · SHEV Law Group</p>
