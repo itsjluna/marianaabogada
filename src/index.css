@@ -972,15 +972,15 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
 }
 
 /* RESPONSIVE */
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   section, .contact-section, .tiktok-section { padding: 64px 28px; }
   nav { padding: 0 20px; }
   .nav-call { display: none; }
   .trust-bar { padding: 16px 28px; gap: 20px; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-bg-shape { display: none; }
-  .hero-diagonal-line { display: none; }
-  .hero-text { padding: 56px 28px 48px; }
+  .hero-diagonal-line, .hero-diagonal-border { display: none !important; }
+  .hero-text { padding: 56px 28px 48px; align-items: center; text-align: center; }
   .hero-image { display: none; }
   .hero-right-text {
     position: relative;
@@ -988,6 +988,7 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
     left: auto;
     right: auto;
     margin: 0 28px 48px;
+    text-align: center;
   }
   .hero-cta-buttons { flex-direction: column; }
   .form-row { flex-direction: column; gap: 13px; }
