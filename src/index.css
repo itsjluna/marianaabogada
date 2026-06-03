@@ -223,6 +223,7 @@ section { padding: 96px 72px; }
 @media (max-width: 1150px) {
   .about { flex-direction: column; max-height: none; gap: 40px; }
   .about-image-wrap img { width: 100%; height: auto; aspect-ratio: 1 / 1; flex: none; }
+  .about-text-block { align-items: flex-start; text-align: left; }
 }
 .about-image-wrap { 
   position: relative; 
@@ -276,6 +277,8 @@ section { padding: 96px 72px; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-end;
+  text-align: right;
 }
 .about-firm-tag {
   display: inline-flex; align-items: center; gap: 8px;
