@@ -220,6 +220,10 @@ section { padding: 96px 72px; }
   gap: 88px; align-items: stretch;
   max-height: 100vh;
 }
+@media (max-width: 1150px) {
+  .about { flex-direction: column; max-height: none; gap: 40px; }
+  .about-image-wrap img { width: 100%; height: auto; aspect-ratio: 1 / 1; flex: none; }
+}
 .about-image-wrap { 
   position: relative; 
   display: flex;
@@ -271,7 +275,7 @@ section { padding: 96px 72px; }
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .about-firm-tag {
   display: inline-flex; align-items: center; gap: 8px;
@@ -1005,7 +1009,6 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
   .hero-cta-buttons { flex-direction: column; }
   .form-row { flex-direction: column; gap: 13px; }
   .form-row .form-field { margin-bottom: 0; flex: none; width: 100%; }
-  .about { flex-direction: column; max-height: none; gap: 40px; }
   .emotional, .contact-section { grid-template-columns: 1fr; gap: 40px; }
   .services-grid, .testimonials-grid, .tiktok-grid { grid-template-columns: 1fr; gap: 24px; }
   .process-steps {
@@ -1037,7 +1040,6 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
     margin-left: auto;
     font-size: 28px;
   }
-  .about-image-wrap img { width: 100%; height: auto; aspect-ratio: 1 / 1; flex: none; }
   footer { flex-direction: column; align-items: flex-start; }
   .footer-shev { text-align: left; }
   .address-bar { padding: 20px 28px; }
