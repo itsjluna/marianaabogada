@@ -74,28 +74,47 @@ nav {
   font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
   color: var(--lavender); margin-bottom: 24px; font-weight: 600;
 }
-.hero-headline {
+.hero-headline, .hero-headline-right {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(38px, 4.2vw, 56px);
   font-weight: 500; color: var(--white);
-  line-height: 1.12; margin-bottom: 24px;
+  line-height: 1.12;
 }
-.hero-headline em { font-style: italic; color: var(--lavender); }
+.hero-headline {
+  font-size: clamp(38px, 4.2vw, 56px);
+  margin-bottom: 24px;
+}
+.hero-headline em, .hero-headline-right em { font-style: italic; color: var(--lavender); }
+.hero-sub, .hero-sub-right {
+  line-height: 1.8; font-weight: 300;
+}
 .hero-sub {
   font-size: 16px; color: rgba(255,255,255,0.65);
-  line-height: 1.8; margin-bottom: 48px;
-  max-width: 400px; font-weight: 300;
+  margin-bottom: 48px;
+  max-width: 400px;
+}
+.hero-right-text {
+  position: absolute;
+  bottom: 40px;
+  left: 15%;
+  right: 20px;
+  z-index: 10;
+  padding: 24px;
+  background: rgba(63, 38, 68, 0.4);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 /* CTA BUTTONS */
-.hero-cta-block { display: flex; flex-direction: column; gap: 12px; max-width: 380px; }
+.hero-cta-block { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 650px; }
+.hero-cta-buttons { display: flex; flex-direction: row; gap: 12px; width: 100%; max-width: 650px; }
 .btn-wa-hero {
   display: flex; align-items: center; justify-content: center; gap: 10px;
   background: var(--whatsapp); color: var(--white);
   padding: 13px 24px; border-radius: 50px;
   font-size: 14px; font-weight: 700; letter-spacing: 0.02em;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  flex: 1;
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
 }
 .btn-wa-hero:hover { background: #1ebc58; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35); }
@@ -107,7 +126,7 @@ nav {
   border: 1px solid rgba(202,159,206,0.3);
   font-size: 14px; font-weight: 600;
   text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
+  flex: 1;
 }
 .btn-call-hero:hover { background: rgba(255,255,255,0.15); border-color: rgba(202,159,206,0.6); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
 .btn-call-hero:active { transform: translateY(0) scale(0.98); }
@@ -568,6 +587,8 @@ section { padding: 96px 72px; }
 }
 .lead-form > p { font-size: 13px; color: var(--text-body); margin-bottom: 26px; }
 .form-field { margin-bottom: 13px; }
+.form-row { display: flex; gap: 12px; margin-bottom: 13px; }
+.form-row .form-field { margin-bottom: 0; flex: 1; }
 .form-field input, .form-field select, .form-field textarea {
   width: 100%;
   background: var(--cream); border: 1px solid var(--light-lavender);
@@ -961,6 +982,16 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
   .hero-diagonal-line { display: none; }
   .hero-text { padding: 56px 28px 48px; }
   .hero-image { display: none; }
+  .hero-right-text {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    margin: 0 28px 48px;
+  }
+  .hero-cta-buttons { flex-direction: column; }
+  .form-row { flex-direction: column; gap: 13px; }
+  .form-row .form-field { margin-bottom: 0; flex: none; width: 100%; }
   .about, .emotional, .contact-section { grid-template-columns: 1fr; gap: 40px; }
   .services-grid, .testimonials-grid, .tiktok-grid { grid-template-columns: 1fr; gap: 24px; }
   .process-steps {
