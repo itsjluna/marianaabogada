@@ -228,7 +228,7 @@ section { padding: 96px 72px; }
 .about-image-wrap img {
   position: relative; z-index: 1;
   width: 100%; aspect-ratio: 1 / 1;
-  object-fit: cover; object-position: center 0%;
+  object-fit: cover; object-position: center 40%;
   border-radius: 2px; display: block;
 }
 .shev-badge {
