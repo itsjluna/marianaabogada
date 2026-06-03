@@ -216,10 +216,16 @@ section { padding: 96px 72px; }
 /* ABOUT */
 .about {
   background: var(--cream);
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 88px; align-items: center;
+  display: flex; flex-direction: row;
+  gap: 88px; align-items: stretch;
+  max-height: 100vh;
 }
-.about-image-wrap { position: relative; }
+.about-image-wrap { 
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+}
 .about-image-wrap::before {
   content: ''; position: absolute;
   top: -18px; left: -18px; right: 18px; bottom: 18px;
@@ -227,7 +233,8 @@ section { padding: 96px 72px; }
 }
 .about-image-wrap img {
   position: relative; z-index: 1;
-  width: 100%; aspect-ratio: 1 / 1;
+  width: auto; height: 100%; aspect-ratio: 1 / 1;
+  flex: 1; min-height: 0;
   object-fit: cover; object-position: center 40%;
   border-radius: 2px; display: block;
 }
@@ -260,7 +267,12 @@ section { padding: 96px 72px; }
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--lavender); font-style: normal; font-weight: 600;
 }
-.about-text-block { }
+.about-text-block { 
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .about-firm-tag {
   display: inline-flex; align-items: center; gap: 8px;
   background: var(--light-lavender); border-radius: 2px;
@@ -993,7 +1005,8 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
   .hero-cta-buttons { flex-direction: column; }
   .form-row { flex-direction: column; gap: 13px; }
   .form-row .form-field { margin-bottom: 0; flex: none; width: 100%; }
-  .about, .emotional, .contact-section { grid-template-columns: 1fr; gap: 40px; }
+  .about { flex-direction: column; max-height: none; gap: 40px; }
+  .emotional, .contact-section { grid-template-columns: 1fr; gap: 40px; }
   .services-grid, .testimonials-grid, .tiktok-grid { grid-template-columns: 1fr; gap: 24px; }
   .process-steps {
     grid-template-columns: 1fr !important;
@@ -1024,7 +1037,7 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
     margin-left: auto;
     font-size: 28px;
   }
-  .about-image-wrap img { height: auto; aspect-ratio: 1 / 1; }
+  .about-image-wrap img { width: 100%; height: auto; aspect-ratio: 1 / 1; flex: none; }
   footer { flex-direction: column; align-items: flex-start; }
   .footer-shev { text-align: left; }
   .address-bar { padding: 20px 28px; }
