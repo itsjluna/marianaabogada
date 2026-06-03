@@ -260,7 +260,7 @@ export default function App() {
       Mi misión es darte claridad, no promesas. Orientación real, no garantías falsas.
     </p>
     <br />
-    <a href="https://shevlawgroup.com/team/" target="_blank" style={{display: "inline-flex", alignItems: "center", gap: "8px", fontSize: "13px", fontWeight: 700, color: "var(--purple)", textDecoration: "none", letterSpacing: "0.05em", textTransform: "uppercase", borderBottom: "2px solid var(--light-lavender)", paddingBottom: "2px"}}>
+    <a href="https://shevlawgroup.com/team/" target="_blank" className="btn-about-link">
       Ver perfil completo en SHEV Law Group
       <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7,7 17,7 17,17"/></svg>
     </a>
