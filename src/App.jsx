@@ -325,9 +325,17 @@ export default function App() {
     </a>
   </div>
   <div className="emotional-image animate-on-scroll animate-fade-up delay-200">
-    <div className="emotional-logo-card">
-      <img src="images/tu-abogadalogo2.png" alt="Logo de la Firma"  />
-      <span className="emotional-logo-tag">Tu Abogada Mariana</span>
+    <div className="emotional-video-wrapper" style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <iframe 
+        width="100%" 
+        height="100%" 
+        style={{aspectRatio: '16/9', borderRadius: '16px', border: 'none', boxShadow: '0 20px 40px rgba(0,0,0,0.1)'}} 
+        src="https://www.youtube.com/embed/kdavSk91gBs?si=Hu4hlxaldPDluM2m&autoplay=1&mute=1" 
+        title="YouTube video player" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerPolicy="strict-origin-when-cross-origin" 
+        allowFullScreen>
+      </iframe>
     </div>
   </div>
 </section>
@@ -482,13 +490,13 @@ export default function App() {
       <div className="contact-divider-line"></div>
     </div>
 
-    <a href="mailto:info@tuabogadamariana.com" className="email-contact">
+    <a href="mailto:marianatuabogada@gmail.com" className="email-contact">
       <div className="email-contact-icon">
         <svg width="15" height="15" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
       <div className="email-contact-text">
         <div className="email-label">Email</div>
-        <div className="email-value">info@tuabogadamariana.com</div>
+        <div className="email-value">marianatuabogada@gmail.com</div>
       </div>
     </a>
   </div>
