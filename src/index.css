@@ -163,6 +163,13 @@ nav {
   display: block;
 }
 
+@media (min-width: 1024px) {
+  .hero-img-desktop {
+    transform: scale(0.5);
+    transform-origin: top center;
+  }
+}
+
 /* TRUST BAR */
 .trust-bar {
   background: var(--purple); padding: 18px 60px;

@@ -153,20 +153,11 @@ export default function App() {
       <span>Atención disponible en español</span>
     </div>
 
-    <h1 className="hero-headline">
-      No estás<br />
-      <em>solo</em>.<br />
-      Tu situación<br />
-      merece atención <em>seria</em>.
-    </h1>
-    <p className="hero-sub">
-      Habla con nuestra abogada hoy. Sin presión, sin promesas falsas. Solo claridad sobre tu caso.
-     <div className="hero-cta-block" style={{marginTop: '32px'}}>
+    <div className="hero-cta-block" style={{marginTop: '32px'}}>
       <div className="hero-form-wrapper" style={{background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(12px)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.1)'}}>
         <ContactForm title="Consulta Gratuita" subtitle="Déjanos tus datos y te llamaremos de inmediato." isDark={true} />
       </div>
     </div>
-    </p>
 
     <div className="hero-cta-block">
       <a href="https://wa.me/18329694319?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20mi%20caso%20de%20inmigraci%C3%B3n." target="_blank" className="btn-wa-hero">
@@ -186,9 +177,21 @@ export default function App() {
 
   <div className="hero-right-col" style={{position: 'relative', width: '100%', height: '100%', zIndex: 2, filter: 'drop-shadow(-20px 0 40px rgba(0,0,0,0.6))'}}>
     <div className="hero-image" style={{clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
-      <img src="images/mariana-hero.png" alt="Abogada Mariana — SHEV Law Group" style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%'}} />
+      <img src="images/mariana-hero.png" alt="Abogada Mariana — SHEV Law Group" className="hero-img-desktop" style={{width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%'}} />
     </div>
     <div className="hero-diagonal-border" style={{clipPath: 'polygon(15% 0, calc(15% + 4px) 0, calc(0% + 4px) 100%, 0% 100%)', background: 'linear-gradient(to bottom, var(--lavender), var(--purple))', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 3}}></div>
+    
+    <div className="hero-right-text" style={{position: 'absolute', bottom: '40px', left: '15%', right: '20px', zIndex: 10}}>
+      <h1 className="hero-headline" style={{fontSize: 'clamp(28px, 3vw, 40px)', marginBottom: '16px', textShadow: '0 4px 12px rgba(0,0,0,0.5)'}}>
+        No estás<br />
+        <em>solo</em>.<br />
+        Tu situación<br />
+        merece atención <em>seria</em>.
+      </h1>
+      <p className="hero-sub" style={{marginBottom: 0, fontSize: '15px', textShadow: '0 2px 8px rgba(0,0,0,0.5)'}}>
+        Habla con nuestra abogada hoy. Sin presión, sin promesas falsas. Solo claridad sobre tu caso.
+      </p>
+    </div>
   </div>
 </section>
 
