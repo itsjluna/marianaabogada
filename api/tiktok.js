@@ -44,17 +44,17 @@ function getFallbackVideos() {
     {
       id: "7645071694134119693",
       desc: "Defensa de Deportación en 1 Minuto",
-      cover: ""
+      cover: "images/tiktok-1.jpg"
     },
     {
       id: "7644627078997970207",
       desc: "¿Cómo solicitar Asilo Político?",
-      cover: ""
+      cover: "images/tiktok-2.jpg"
     },
     {
       id: "7644242137311137037",
       desc: "Reunificación Familiar en Texas",
-      cover: ""
+      cover: "images/tiktok-3.jpg"
     }
   ];
 }
