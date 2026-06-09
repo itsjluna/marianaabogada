@@ -229,7 +229,8 @@ section { padding: 96px 72px; }
   position: relative; 
   display: flex;
   flex-direction: column;
-  flex: 0 1 auto;
+  flex: 1;
+  min-width: 0;
 }
 .about-image-wrap::before {
   content: ''; position: absolute;
@@ -238,8 +239,7 @@ section { padding: 96px 72px; }
 }
 .about-image-wrap img {
   position: relative; z-index: 1;
-  width: auto; height: 100%; aspect-ratio: 1 / 1;
-  flex: 1; min-height: 0;
+  width: 100%; height: auto; aspect-ratio: 1 / 1;
   object-fit: cover; object-position: center 40%;
   border-radius: 2px; display: block;
 }
@@ -274,6 +274,7 @@ section { padding: 96px 72px; }
 }
 .about-text-block { 
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
