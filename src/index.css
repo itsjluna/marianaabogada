@@ -218,7 +218,6 @@ section { padding: 96px 72px; }
   background: var(--cream);
   display: flex; flex-direction: row;
   gap: 88px; align-items: stretch;
-  max-height: 100vh;
 }
 @media (max-width: 1150px) {
   .about { flex-direction: column; max-height: none; gap: 40px; }
