@@ -50,7 +50,6 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
   background: var(--plum);
   display: grid;
   grid-template-columns: 1fr 1fr;
