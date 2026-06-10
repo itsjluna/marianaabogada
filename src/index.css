@@ -94,7 +94,7 @@ nav {
 }
 .hero-right-text {
   position: absolute;
-  bottom: 40px;
+  bottom: 12%;
   left: 15%;
   right: 20px;
   z-index: 10;
@@ -228,7 +228,7 @@ section { padding: 96px 72px; }
   position: relative; 
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0 1 450px;
   min-width: 0;
 }
 .about-image-wrap::before {
