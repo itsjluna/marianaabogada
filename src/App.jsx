@@ -224,17 +224,6 @@ export default function App() {
 <section className="about">
   <div className="about-image-wrap animate-on-scroll animate-fade-up">
     <img src="images/mariana-about.png" alt="Abogada Mariana"  />
-    <div className="shev-badge">
-      <svg width="20" height="20" fill="none" stroke="#CA9FCE" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <div className="shev-badge-text">
-        <div className="shev-badge-label">Parte de</div>
-        <div className="shev-badge-name">SHEV Law Group · Houston &amp; Dallas</div>
-      </div>
-    </div>
-    <div className="about-quote">
-      <p>"Muchos inmigrantes viven con miedo todos los días. Yo estoy aquí para cambiar eso."</p>
-      <cite>— Mariana, Abogada de Inmigración</cite>
-    </div>
   </div>
 
   <div className="about-text-block animate-on-scroll animate-fade-up delay-200">

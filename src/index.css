@@ -93,7 +93,7 @@ nav {
 }
 .hero-right-text {
   position: absolute;
-  bottom: 12%;
+  bottom: 24px;
   left: 15%;
   right: 20px;
   z-index: 10;
@@ -230,11 +230,6 @@ section { padding: 96px 72px; }
   flex: 0 1 450px;
   min-width: 0;
 }
-.about-image-wrap::before {
-  content: ''; position: absolute;
-  top: -18px; left: -18px; right: 18px; bottom: 18px;
-  background: var(--light-lavender); border-radius: 2px; z-index: 0;
-}
 .about-image-wrap img {
   position: relative; z-index: 1;
   width: 100%; height: auto; aspect-ratio: 1 / 1;
@@ -276,8 +271,11 @@ section { padding: 96px 72px; }
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
-  text-align: right;
+  align-items: center;
+  text-align: center;
+}
+.about-text-block .section-body {
+  max-width: 100%;
 }
 .about-firm-tag {
   display: inline-flex; align-items: center; gap: 8px;
