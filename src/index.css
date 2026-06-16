@@ -102,6 +102,8 @@ nav {
   backdrop-filter: blur(8px);
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.1);
+  transform: scale(0.8);
+  transform-origin: bottom right;
 }
 
 /* CTA BUTTONS */
@@ -1017,6 +1019,7 @@ body, section, .service-card, .testimonial-card, .process-step, .lead-form, inpu
     right: auto;
     margin: 0 28px 48px;
     text-align: center;
+    transform: none;
   }
   .hero-cta-buttons { flex-direction: column; }
   .form-row { flex-direction: column; gap: 13px; }

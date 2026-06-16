@@ -173,10 +173,10 @@ export default function App() {
   </div>
 
   <div className="hero-right-col" style={{position: 'relative', width: '100%', height: '100%', zIndex: 2, filter: 'drop-shadow(-20px 0 40px rgba(0,0,0,0.6))'}}>
-    <div className="hero-image" style={{clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
-      <img src="images/mariana-hero.png" alt="Abogada Mariana — SHEV Law Group" className="hero-img-desktop" style={{width: '100%', height: '95%', objectFit: 'contain', objectPosition: 'center bottom', position: 'absolute', bottom: 0, right: 0}} />
+    <div className="hero-image" style={{clipPath: 'polygon(30% -100%, 100% -100%, 100% 100%, 0% 100%)', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0}}>
+      <img src="images/mariana-hero.png" alt="Abogada Mariana — SHEV Law Group" className="hero-img-desktop" style={{width: '100%', height: '105%', objectFit: 'contain', objectPosition: 'center bottom', position: 'absolute', bottom: 0, right: 0}} />
     </div>
-    <div className="hero-diagonal-border" style={{clipPath: 'polygon(15% 0, calc(15% + 4px) 0, calc(0% + 4px) 100%, 0% 100%)', background: 'linear-gradient(to bottom, var(--lavender), var(--purple))', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 3}}></div>
+    <div className="hero-diagonal-border" style={{clipPath: 'polygon(30% -100%, calc(30% + 4px) -100%, calc(0% + 4px) 100%, 0% 100%)', background: 'linear-gradient(to bottom, var(--lavender), var(--purple))', width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 3}}></div>
     
     <div className="hero-right-text">
       <h1 className="hero-headline-right" style={{fontSize: 'clamp(32px, 4vw, 48px)', marginBottom: '16px', textShadow: '0 6px 16px rgba(0,0,0,0.8)'}}>
