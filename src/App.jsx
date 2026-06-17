@@ -319,7 +319,7 @@ export default function App() {
         width="100%" 
         height="100%" 
         style={{aspectRatio: '16/9', borderRadius: '16px', border: 'none', boxShadow: '0 20px 40px rgba(0,0,0,0.1)'}} 
-        src="https://www.youtube.com/embed/kdavSk91gBs?si=Hu4hlxaldPDluM2m&autoplay=1&mute=1" 
+        src="https://www.youtube.com/embed/FJMffpBcHIQ?autoplay=1&mute=1" 
         title="YouTube video player" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerPolicy="strict-origin-when-cross-origin" 
