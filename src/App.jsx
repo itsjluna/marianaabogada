@@ -144,7 +144,7 @@ export default function App() {
 <section className="hero">
   <div className="hero-bg-gradient" style={{position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: 1, background: 'linear-gradient(135deg, var(--plum) 0%, var(--purple) 60%, var(--lavender) 100%)'}}></div>
   <div className="hero-text">
-    <p className="hero-eyebrow">Derecho de Inmigración · Houston, Texas · SHEV Law Group</p>
+    <p className="hero-eyebrow">Inmigración · Houston, Texas · SHEV Law Group</p>
 
     <div className="urgency-badge">
       <div className="urgency-dot"></div>
@@ -153,7 +153,7 @@ export default function App() {
 
     <div className="hero-cta-block" style={{marginTop: '32px'}}>
       <div className="hero-form-wrapper" style={{background: 'rgba(255, 255, 255, 0.05)', backdropFilter: 'blur(12px)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.1)'}}>
-        <ContactForm title="Consulta Gratuita" subtitle="Déjanos tus datos y te llamaremos de inmediato." isDark={true} />
+        <ContactForm title="Consulta Personalizada" subtitle="Déjanos tus datos y te llamaremos de inmediato." isDark={true} />
       </div>
       <div className="hero-cta-buttons" style={{marginTop: '24px'}}>
         <a href="https://wa.me/18329694319?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20informaci%C3%B3n%20sobre%20mi%20caso%20de%20inmigraci%C3%B3n." target="_blank" className="btn-wa-hero">
