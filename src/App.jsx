@@ -1,11 +1,37 @@
-import React, { useEffect } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
 
 function ContactForm({ title, subtitle, isDark }) {
-  const [state, handleSubmit] = useForm("contact");
+  const [status, setStatus] = useState("");
 
-  if (state.succeeded) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("submitting");
+    const form = e.target;
+    const data = new FormData(form);
+    
+    fetch("https://formsubmit.co/ajax/marianatuabogada@gmail.com", {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+       if(data.success) {
+         setStatus("succeeded");
+       } else {
+         setStatus("error");
+       }
+    })
+    .catch(error => {
+       console.error(error);
+       setStatus("error");
+    });
+  };
+
+  if (status === "succeeded") {
       return (
         <div className="success-msg" style={{display: 'block'}}>
           <h4 style={isDark ? {color: 'white'} : {}}>¡Mensaje Enviado!</h4>
@@ -19,15 +45,15 @@ function ContactForm({ title, subtitle, isDark }) {
       <h3 style={isDark ? {fontSize: '24px', marginBottom: '8px', color: 'white'} : {}}>{title}</h3>
       <p style={isDark ? {fontSize: '14px', marginBottom: '24px', color: 'rgba(255,255,255,0.8)'} : {}}>{subtitle}</p>
       
+      {status === "error" && <p style={{color: '#ff4d4d', marginBottom: '16px', fontSize: '13px'}}>Hubo un error al enviar tu mensaje. Intenta de nuevo.</p>}
+
       <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-field">
             <input type="text" name="name" placeholder="Tu nombre completo" required />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </div>
           <div className="form-field">
             <input type="tel" name="phone" placeholder="Tu número de teléfono" required />
-            <ValidationError prefix="Phone" field="phone" errors={state.errors} />
           </div>
         </div>
         <div className="form-field">
@@ -40,14 +66,13 @@ function ContactForm({ title, subtitle, isDark }) {
             <option>Arreglar mis papeles</option>
             <option>Otro</option>
           </select>
-          <ValidationError prefix="Case" field="case" errors={state.errors} />
         </div>
         <div className="form-field">
           <textarea name="message" placeholder="Cuéntanos brevemente tu situación (opcional)" style={isDark ? {background: 'rgba(255,255,255,0.1)', color: 'white', borderColor: 'rgba(255,255,255,0.2)'} : {}}></textarea>
-          <ValidationError prefix="Message" field="message" errors={state.errors} />
         </div>
-        <button type="submit" disabled={state.submitting} className="form-submit" style={isDark ? {width: '100%', marginTop: '12px', padding: '14px'} : {}}>
-          {state.submitting ? 'Enviando...' : 'Enviar mis datos'}
+        <input type="hidden" name="_subject" value="Nuevo lead desde Tu Abogada Mariana" />
+        <button type="submit" disabled={status === "submitting"} className="form-submit" style={isDark ? {width: '100%', marginTop: '12px', padding: '14px'} : {}}>
+          {status === "submitting" ? 'Enviando...' : 'Enviar mis datos'}
         </button>
       </form>
     </div>
